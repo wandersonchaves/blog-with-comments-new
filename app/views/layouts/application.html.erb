@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogWithComments</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <%= render 'layouts/nav' %>
+      
+      <%= yield %>
+
+    </div>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <%= render 'layouts/content'%>
+        </div>
+
+        <%= render 'layouts/aside'%>
+      </div>
+    </main>
+    
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
