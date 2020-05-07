@@ -1,5 +1,5 @@
 <div class="section p-5">
-  <h2 _ngcontent-ggo-c50="" class="mb-4">Post Content</h2>
+  <h2 class="mb-4">Post Content</h2>
   <%= simple_form_for @post do |f| %>
     <div class='field'>
       <div class='control'>
@@ -11,7 +11,7 @@
         <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }%>
       </div>
     </div>
-    <button _ngcontent-ggo-c50="" data-cy="updateButton" type="submit" class="btn btn-primary">
+    <button data-cy="updateButton" type="submit" class="btn btn-primary">
       <%= f.button :submit, 'Create Post', class: 'button is-primary' %>
     </button>
   <% end %>

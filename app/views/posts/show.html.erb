@@ -1,43 +1,33 @@
-<% content_for :page_title, @post.title %>
-<app-root _nghost-riw-c43="" ng-version="9.0.4">
-  <router-outlet _ngcontent-riw-c43=""></router-outlet>
-  <sb-post _nghost-riw-c48="">
-    <sb-layout-blog _ngcontent-riw-c48="" _nghost-riw-c42="">
-      <article _ngcontent-riw-c48="">
-        <div _ngcontent-riw-c48="" class="container">
-          <div _ngcontent-riw-c48="" class="row">
-            <div _ngcontent-riw-c48="" class="col-lg-8 col-md-10 mx-auto pt-5">
-              <markdown _ngcontent-riw-c48="">
-                <h1 id="magna-nostrud-incididunt-cupidatat-cillum-incididunt-et-nisi-in-ut-minim-reprehenderit">
-                  <%= @post.title %>
-                </h1>
-                <p>Description</p>
-                <p>
-                  <%= @post.content %>
-                </p>
-              </markdown>
-              <button _ngcontent-riw-c48="" type="button" class="btn btn-primary">
-                <%= link_to 'Edit Post', edit_post_path(@post), class: 'button' %>
-              </button>
-              <button _ngcontent-ggo-c50="" class="btn btn-danger">
-                <%= link_to 'Delete Post', post_path(@post), method: :delete, data:{confirm: 'Are you sure? '}, class: 'button is-danger' %>
-              </button>
-            </div>
-            <!---->
-            <section class="section comments">
-              <div class="container">
-                <div class="comment-form">
-                  <hr>
-                  <h3 class="subtitle is-3">Leave a reply</h3>
-                  <%= render 'comments/form'%>
-                </div>
-                <h2 class="subtitle is-6"><strong><%= @post.comments.count %></strong> Comments</h2>
-                <%= render @post.comments%>
-              </div>
-            </section>
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10">
+      <markdown>
+        <h1 id="magna-nostrud-incididunt-cupidatat-cillum-incididunt-et-nisi-in-ut-minim-reprehenderit">
+          <%= @post.title %>
+        </h1>
+        <p>Description</p>
+        <p>
+          <%= @post.content %>
+        </p>
+      </markdown>
+      <button type="button" class="btn btn-primary">
+        <%= link_to 'Edit Post', edit_post_path(@post), class: 'button' %>
+      </button>
+      <button _ngcontent-ggo-c50="" class="btn btn-danger">
+        <%= link_to 'Delete Post', post_path(@post), method: :delete, data:{confirm: 'Are you sure? '}, class: 'button is-danger' %>
+      </button>
+    </div>
+    <!---->
+    <section class="section comments">
+      <div class="container">
+        <div class="comment-form">
+          <hr>
+          <span class="font-weight-bold">Discussion</span>
+          <%= render 'comments/form'%>
         </div>
-      </article>
-    </sb-layout-blog><!---->
-  </sb-post><!---->
-</app-root>
+        <h2 class="subtitle is-6"><strong><%= @post.comments.count %></strong> Comments</h2>
+        <%= render @post.comments%>
+      </div>
+    </section>
+  </div>
+</div>
