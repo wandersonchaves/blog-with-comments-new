@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-10">
+    <div class="col-12">
       <markdown>
         <h1 id="magna-nostrud-incididunt-cupidatat-cillum-incididunt-et-nisi-in-ut-minim-reprehenderit">
           <%= @post.title %>
@@ -17,17 +17,20 @@
         <%= link_to 'Delete Post', post_path(@post), method: :delete, data:{confirm: 'Are you sure? '}, class: 'button is-danger' %>
       </button>
     </div>
-    <!---->
-    <section class="section comments">
-      <div class="container">
-        <div class="comment-form">
-          <hr>
-          <span class="font-weight-bold">Discussion</span>
+  </div>
+  <!---->
+  <div class="row">
+    <div class="col-12">
+      <div class="card my-4">
+        <h5 class="card-header">
+          Leave a Comment:
+          <strong class='ml-5'><%= @post.comments.count %></strong>
+        </h5>
+        <div class="card-body">
           <%= render 'comments/form'%>
         </div>
-        <h2 class="subtitle is-6"><strong><%= @post.comments.count %></strong> Comments</h2>
-        <%= render @post.comments%>
       </div>
-    </section>
+      <%= render @post.comments%>
+    </div>
   </div>
 </div>
