@@ -1,15 +1,24 @@
-<div class="section">
-	<%= simple_form_for @post do |f| %>
-		<div class='field'>
-			<div class='control'>
-				<%= f.input :title, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' }%>
-			</div>
-		</div>
-		<div class='field'>
-			<div class='control'>
-				<%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }%>
-			</div>
-		</div>
-		<%= f.button :submit, 'Create new post', class: 'button is-primary'%>
-	<% end %>
+<div class="section p-5">
+  <h2 _ngcontent-ggo-c50="" class="mb-4">Post Content</h2>
+  <%= simple_form_for @post do |f| %>
+    <div class='field'>
+      <div class='control'>
+        <%= f.input :title, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' }%>
+      </div>
+    </div>
+    <div class='field'>
+      <div class='control'>
+        <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }%>
+      </div>
+    </div>
+    <%= f.button :submit, 'Create new post', class: 'button is-primary'%>
+  <% end %>
+  <h2 _ngcontent-ggo-c50="" class="mt-4">Post Preview</h2>
+  <markdown _ngcontent-ggo-c50="" id="newPostPreview" class="p-4 mb-4">
+    <h1 id="dolore-pariatur-amet-ullamco-aliquip-mollit-aliqua-qui">Dolore pariatur amet ullamco aliquip mollit aliqua qui.</h1>
+    <p>Eiusmod ipsum do dolore fugiat consequat quis non qui velit consectetur velit.</p>
+    <h2 id="incididunt-cillum-do-dolor-occaecat">Incididunt cillum do dolor occaecat.</h2>
+    <p>Tempor sint cupidatat cillum do ut. Ipsum exercitation est ex id. Sunt ut labore ad nulla.</p>
+  </markdown>
+  <button _ngcontent-ggo-c50="" class="btn btn-danger">Delete Post</button>
 </div>
