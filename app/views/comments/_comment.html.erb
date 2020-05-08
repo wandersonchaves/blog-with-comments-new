@@ -3,8 +3,11 @@
   <div class="media-body">
     <h5 class="mt-0"><strong><%= comment.name %></strong></h5>
     <%= comment.comment%>
-    <button class="btn btn-link mb-2">
-      <%= link_to 'Delete', [comment.post, comment], method: :delete, class: 'link', data: {confirm: 'Are you sure? '}%>
-    </button>
   </div>
+  <button class="btn btn-link">
+    <svg id='svh' style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+    </svg>
+    <%= link_to 'Delete', [comment.post, comment], method: :delete, class: 'btn-link', data: {confirm: 'Are you sure? '}%>
+  </button>
 </div>
