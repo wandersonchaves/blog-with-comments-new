@@ -1,15 +1,10 @@
-<div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong><%= comment.name %>: </strong>
-          <%= comment.comment%>
-        </p>
-      </div>
-    </div>
+<div class="media mb-4">
+  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+  <div class="media-body">
+    <h5 class="mt-0"><strong><%= comment.name %></strong></h5>
+    <%= comment.comment%>
     <button class="btn btn-link mb-2">
-      <%= link_to 'Delete', [comment.post, comment], method: :delete, class: 'button is danger', data: {confirm: 'Are you sure? '}%>
+      <%= link_to 'Delete', [comment.post, comment], method: :delete, class: 'link', data: {confirm: 'Are you sure? '}%>
     </button>
-  </article>
+  </div>
 </div>

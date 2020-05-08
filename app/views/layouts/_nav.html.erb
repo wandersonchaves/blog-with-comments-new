@@ -18,6 +18,9 @@
         <li>
           <a routerlink="/posts/new" class="btn btn-primary" href="/posts/new">New Post</a>
         </li>
+        <li class="nav-item">
+          <%= link_to 'Sign Out', destroy_account_session_path, method: :delete, class: 'nav-link' %>
+        </li>
       </ul>
     <% else %>
       <ul class="navbar-nav">

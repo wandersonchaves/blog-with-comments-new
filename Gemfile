@@ -26,9 +26,6 @@ gem 'webpacker', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-# Bulma CSS
-gem 'bulma-rails', '~> 0.8.0'
-
 # Simple Form
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
