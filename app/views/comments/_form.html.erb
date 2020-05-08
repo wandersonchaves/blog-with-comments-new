@@ -8,8 +8,12 @@
   -->
   <div class="form-group">
     <div class="control">
-      <%= f.input :comment, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'label' } %>
-    </div>
+      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">
+        <%= f.input :comment, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'label' } %>
+      </div>
+    </button>
   </div>
-  <%= f.button :submit, class: 'btn btn-primary'%>
+  <% if account_signed_in? %>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+  <% end %>
 <% end %>
