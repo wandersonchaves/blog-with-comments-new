@@ -8,12 +8,15 @@
   -->
   <div class="form-group">
     <div class="control">
-      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="btn btn-link col-12" data-toggle="modal" data-target="#exampleModalCenter">
         <%= f.input :comment, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'label' } %>
-      </div>
-    </button>
+        <% if !account_signed_in? %>
+          <%= render 'devise/sessions/new'%>
+        <% end %>
+      </button>
+      <% if account_signed_in? %>
+        <%= f.button :submit, class: 'btn btn-primary'%>
+      <% end %>
+    </div>
   </div>
-  <% if account_signed_in? %>
-    <%= f.button :submit, class: 'btn btn-primary'%>
-  <% end %>
 <% end %>
