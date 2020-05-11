@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :accounts # Rota padrão criada pelo devise
   resources :posts do # Rota principal
