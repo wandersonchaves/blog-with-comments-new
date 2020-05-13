@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BlogWithComments</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-  </head>
-  <body>
-    <nav class="container fixed-top">
-      <%= render 'layouts/nav' %>
-    </nav>
-    <main role="main" class="container blog-container">
-      <div class="row">
-        <div class="col-md-8 blog-main">
-          <%= yield %>
-        </div>
-        <%= render 'layouts/aside'%>
+
+<head>
+  <title>BlogWithComments</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
+
+<body>
+  <nav class="container fixed-top">
+    <%= render 'layouts/nav' %>
+  </nav>
+  <main role="main" class="container blog-container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <%= yield %>
       </div>
-      <%= render 'layouts/footer' %>
-    </main>
-  </body>
+      <%= render 'layouts/aside'%>
+    </div>
+    <%= render 'layouts/footer' %>
+  </main>
+  <%= render 'devise/modal/login_signup' %>
+</body>
+
 </html>
