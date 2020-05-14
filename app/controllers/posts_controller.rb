@@ -2,7 +2,9 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order('created_at DESC')
+    logger.debug(params[:q])
+    q = params[:q]
+    @posts = Post.where('title ilike ?', "%#{q}%").order('created_at DESC')
   end
 
   def new
