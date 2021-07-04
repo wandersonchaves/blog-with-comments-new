@@ -1,14 +1,14 @@
 <% content_for :page_title, "Index" %>
 <% @posts.each do |post| %>
-  <div class="blog-post">
-    <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
-    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-    <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-    <hr>
-    <!-- Inserir aqui a descrição do post 
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
+  <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+  <p class="blog-post-title"><%= post.description %></p>
+  <hr>
+  <!-- Inserir aqui a descrição do post 
     <%= post.content %>-->
-  </div>
-  <%# .blog-post %>
+</div>
+<%# .blog-post %>
 <% end %>
 <nav class="blog-pagination">
   <a class="btn btn-outline-primary" href="#">Older</a>
